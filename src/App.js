@@ -6,17 +6,24 @@ import { Button, formControl, Input } from "@material-ui/core";
 function App() {
   //////////////////
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  const todos = useState([]);
   //////////////////
   const handleSubmit = (e) => {
     console.log("checkmate", input);
-    setTodos([...todos, input]);
+    todos[1]([...todos[0], input]);
     setInput(""); //you can
     console.log([...todos, input]);
   };
 
+  // const handleDelete = () => {
+  //   setTodos()
+  // }
+
   return (
     <div>
+      {/* {todos[1]("Mustafa")}
+      {todos[1]([...todos[0], "steve"])}
+      {console.log(todos[0])} */}
       <h1>Simple Todo App</h1>
       <formControl>
         <inputLabel>add here:</inputLabel>
@@ -29,9 +36,8 @@ function App() {
       <Button disabled={!input} onClick={handleSubmit} variant="contained">
         Submit
       </Button>
-      {todos.map((todo) => {
-        return <Todo info={todo} />;
-      })}
+
+      <Todo info={todos} />
     </div>
   );
 }

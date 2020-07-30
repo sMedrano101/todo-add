@@ -1,12 +1,21 @@
 import React from "react";
-
+// let [value,settigdata]
 const Todo = (props) => {
+  // [Mustafa,steve]
   return (
     <ul>
-      <li>
-        <h2>{props.info}</h2>
-        <button onClick={(event) => props.todo}>DELETE BUTTON</button>
-      </li>
+      {props.info[0].map((todo) => (
+        <li>
+          {todo}{" "}
+          <button
+            onClick={() =>
+              props.info[1](props.info[0].filter((el) => el != props.info[0]))
+            }
+          >
+            Delete
+          </button>
+        </li>
+      ))}
     </ul>
   );
 };
