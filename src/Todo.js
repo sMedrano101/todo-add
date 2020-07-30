@@ -9,7 +9,7 @@ const Todo = (props) => {
           {todo}{" "}
           <button
             onClick={() =>
-              props.info[1](props.info[0].filter((el) => el != props.info[0]))
+              props.info[1](props.info[0].filter((e) => e != todo))
             }
           >
             Delete
